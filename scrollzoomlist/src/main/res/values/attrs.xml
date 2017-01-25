@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <declare-styleable name="ScrollZoomListView">
+
+    <attr name="min_zoom_scale" format="float" />
+    <attr name="max_zoom_scale" format="float" />
+    <attr name="normal_scale" format="float" />
+    <attr name="zoom_scale" format="float" />
+
+    <attr name="zoom_to_small_times" format="integer" />
+    <attr name="zoom_scale_duration" format="integer" />
+    <attr name="zoom_to_small_scale_duration" format="integer" />
+
+  </declare-styleable>
+
+
+
+</resources>
