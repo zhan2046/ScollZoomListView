@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 <zhan.scrollzoomlist.ScrollZoomListView
     android:id="@+id/list"
+    app:min_zoom_scale="0.4"
+    app:max_zoom_scale="2.0"
+    app:zoom_scale_duration="300"
+    app:zoom_to_small_scale_duration="500"
+    app:zoom_to_small_times="6"
+    app:normal_scale="1.0"
+    app:zoom_scale="2.0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
 
