@@ -33,7 +33,7 @@ ScrollZoomListView use **Animation** and **Canvas** let ListView **scale** and *
 Core code
 ------
 
-```java
+```
 
 	  @Override protected void dispatchDraw(@NonNull Canvas canvas) {
 	    canvas.save(Canvas.MATRIX_SAVE_FLAG);
@@ -42,6 +42,8 @@ Core code
 	    super.dispatchDraw(canvas);
 	    canvas.restore();
 	  }
+
+
 ```
 
 Gradle
@@ -50,7 +52,7 @@ Gradle
 Add it in your root build.gradle at the end of repositories:
 
 
-```java
+```
 
 	allprojects {
 		repositories {
@@ -58,16 +60,18 @@ Add it in your root build.gradle at the end of repositories:
 			maven { url 'https://jitpack.io' }
 		}
 	}
+
 ```
 
 Add the dependency:
 
 
-```java
+```
 
 	dependencies {
 	        compile 'com.github.ruzhan123:ScollZoomListView:v1.0'
 	}
+
 ```
 
 
@@ -91,10 +95,11 @@ Usage
 expand Interface
 -----
 
-**Synchronous ListView Animation:**
+Synchronous ListView Animation:
 
 
-```java
+```
+
 
 	public interface OnListViewZoomListener {
 	
@@ -105,45 +110,59 @@ expand Interface
 		
 		void onListViewCancel();
 	}
+
+
+	  private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
+
+
+```
+
+
+
+Synchronous ListView Zoom ScaleGestureDetector:
+
+```
+
+		private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
+
+
+```
+
+
+Synchronous ListView Zoom GestureDetector:
+
+```
+
+	  private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
+
+
+```
+
+
+```
+
+
+
+	  public void addOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
+	    if(listener != null) {
+	      if(!mOnScaleGestureListeners.contains(listener)) {
+	        mOnScaleGestureListeners.add(listener);
+	      }
+	    }
+	  }
 	
-	private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
+	  public void removeOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
+	    if(listener != null) {
+	      if(mOnScaleGestureListeners.contains(listener)) {
+	        mOnScaleGestureListeners.remove(listener);
+	      }
+	    }
+	  }
+
+
+
 ```
 
-
-
-**Synchronous ListView Zoom ScaleGestureDetector:**
-
-```java
-
-	private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
-```
-
-
-**Synchronous ListView Zoom GestureDetector:**
-
-```java
-
-	private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
-```
-
-
-```java
-
-	public void addOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
-	if(listener != null) {
-  		if(!mOnScaleGestureListeners.contains(listener)) {
-    	mOnScaleGestureListeners.add(listener);
-  			}
-		}
-	}
-	public void removeOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
-	if(listener != null) {
-  		if(mOnScaleGestureListeners.contains(listener)) {
-   		 mOnScaleGestureListeners.remove(listener);
-  			}
-		}
-	}
-```
 
 License
 -------
