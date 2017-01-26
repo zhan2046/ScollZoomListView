@@ -35,18 +35,14 @@ Core code
 
 ```
 
-			......
-
 	  @Override protected void dispatchDraw(@NonNull Canvas canvas) {
 	    canvas.save(Canvas.MATRIX_SAVE_FLAG);
 	    canvas.translate(mTranslateX, mTranslateY);
 	    canvas.scale(mScaleFactor, mScaleFactor);
-	
 	    super.dispatchDraw(canvas);
 	    canvas.restore();
 	  }
 
-			......
 
 ```
 
@@ -99,28 +95,52 @@ Usage
 expand Interface
 -----
 
+Synchronous ListView Animation:
+
 
 ```
 
+
 	public interface OnListViewZoomListener {
 	
-	void onListViewZoomUpdate(ValueAnimator animation, float translateX, float translateY,
-	    float scaleX, float scaleY);
-	
-	void onListViewStart();
-	
-	void onListViewCancel();
+		void onListViewZoomUpdate(ValueAnimator animation, float translateX, float translateY,
+		    float scaleX, float scaleY);
+		
+		void onListViewStart();
+		
+		void onListViewCancel();
 	}
 
 
-	  //synchronous ListView Zoom ScaleGestureDetector
-	  private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
-	
-	  //synchronous ListView Zoom GestureDetector
-	  private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
-	
-	  //synchronous ListView Zoom Animation
 	  private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
+
+
+```
+
+
+
+Synchronous ListView Zoom ScaleGestureDetector:
+
+```
+
+		private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
+
+
+```
+
+
+Synchronous ListView Zoom GestureDetector:
+
+```
+
+	  private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
+
+
+```
+
+
+```
+
 
 
 	  public void addOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
@@ -139,9 +159,10 @@ expand Interface
 	    }
 	  }
 
-	......
+
 
 ```
+
 
 License
 -------
