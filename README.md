@@ -91,13 +91,7 @@ Usage
 expand Interface
 -----
 
-
-
-
-**Synchronous ListView Animation:**
-
-
-
+**Synchronous ListView**
 
 ```java
 
@@ -114,51 +108,16 @@ expand Interface
 	private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
 ```
 
-
-
-
-**Synchronous ListView ScaleGestureDetector:**
-
-
-
-
 ```java
 
 	private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
 ```
-
-
-
-
-
-**Synchronous ListView GestureDetector:**
-
-
-
 
 ```java
 
 	private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
 ```
 
-
-```java
-
-	public void addOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
-	if(listener != null) {
-  		if(!mOnScaleGestureListeners.contains(listener)) {
-    	mOnScaleGestureListeners.add(listener);
-  			}
-		}
-	}
-	public void removeOnScaleGestureListener(ScaleGestureDetector.SimpleOnScaleGestureListener listener) {
-	if(listener != null) {
-  		if(mOnScaleGestureListeners.contains(listener)) {
-   		 mOnScaleGestureListeners.remove(listener);
-  			}
-		}
-	}
-```
 
 License
 -------
