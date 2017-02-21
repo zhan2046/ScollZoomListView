@@ -29,6 +29,9 @@ expand
 
 ScrollZoomListView use **Animation** and **Canvas** let ListView **scale** and **translate**, add **ScaleGestureDetector** , **GestureDetector** expand ListView.
 
+[![](https://jitpack.io/v/ruzhan123/ScollZoomListView.svg)](https://jitpack.io/#ruzhan123/ScollZoomListView)
+
+
 
 Core code
 ------
@@ -104,20 +107,17 @@ expand Interface
 		
 		void onListViewCancel();
 	}
+
 	
 	private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
+	private List<SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
+	private List<SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
 ```
 
-```java
+Developed by
+-------
 
-	private List<ScaleGestureDetector.SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
-```
-
-```java
-
-	private List<GestureDetector.SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
-```
-
+ ruzhan - <a href='javascript:'>dev19921116@gmail.com</a>
 
 License
 -------
