@@ -18,9 +18,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by ruzhan on 17/1/9.
- */
 public class ScrollZoomListView extends ListView {
 
   private static final int INVALID_POINTER_ID = -1;

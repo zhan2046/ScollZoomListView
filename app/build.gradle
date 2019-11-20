@@ -1,14 +1,25 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 
 android {
-  compileSdkVersion 28
+  compileSdkVersion versions.compileSdk
+
   defaultConfig {
-    applicationId "zhan.scollzoomlistview"
-    minSdkVersion 16
-    targetSdkVersion 28
+    applicationId versions.applicationId
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
     versionCode 1
     versionName "1.0"
   }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
   buildTypes {
     release {
       minifyEnabled false
@@ -18,8 +29,8 @@ android {
 }
 
 dependencies {
-  compile fileTree(include: ['*.jar'], dir: 'libs')
-  compile 'com.github.bumptech.glide:glide:3.7.0'
-  compile 'com.android.support:appcompat-v7:28.0.0'
-  compile project(':scrollzoomlist')
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  implementation 'com.github.bumptech.glide:glide:3.7.0'
+  implementation 'com.android.support:appcompat-v7:28.0.0'
+  implementation project(':scrollzoomlist')
 }
