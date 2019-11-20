@@ -263,8 +263,7 @@ public class ScrollZoomListView extends ListView {
   }
 
   @Override protected void dispatchDraw(@NonNull Canvas canvas) {
-
-    canvas.save(Canvas.MATRIX_SAVE_FLAG);
+    canvas.save();
     canvas.translate(mTranslateX, mTranslateY);
     canvas.scale(mScaleFactor, mScaleFactor);
 
