@@ -5,47 +5,17 @@ ScrollZoomListView
 A grace comic reader widget, expand ListView.
 
 
-expand
+Screenshots
 -----
-**1: scale item:**
-
-![](https://github.com/ruzhan123/ScollZoomListView/raw/master/gif/comic01.gif)
-
-
-
-
-**2: scale and translate total:**
-
-![](https://github.com/ruzhan123/ScollZoomListView/raw/master/gif/comic02.gif)
-
-
-
-**3: zoom total:**
-
-
-![](https://github.com/ruzhan123/ScollZoomListView/raw/master/gif/comic03.gif)
-
+<a href="gif/comic01.gif"><img src="gif/comic01.gif" width="30%"/></a>
+<a href="gif/comic02.gif"><img src="gif/comic02.gif" width="30%"/></a>
+<a href="gif/comic03.gif"><img src="gif/comic03.gif" width="30%"/></a>
 
 
 ScrollZoomListView use **Animation** and **Canvas** let ListView **scale** and **translate**, add **ScaleGestureDetector** , **GestureDetector** expand ListView.
 
 [![](https://jitpack.io/v/ruzhan123/ScollZoomListView.svg)](https://jitpack.io/#ruzhan123/ScollZoomListView)
 
-
-
-Core code
-------
-
-```java
-
-	  @Override protected void dispatchDraw(@NonNull Canvas canvas) {
-	    canvas.save(Canvas.MATRIX_SAVE_FLAG);
-	    canvas.translate(mTranslateX, mTranslateY);
-	    canvas.scale(mScaleFactor, mScaleFactor);
-	    super.dispatchDraw(canvas);
-	    canvas.restore();
-	  }
-```
 
 Gradle
 ------
@@ -69,7 +39,7 @@ Add the dependency:
 ```java
 
 	dependencies {
-	        compile 'com.github.ruzhan123:ScollZoomListView:v1.0'
+	        implementation 'com.github.ruzhan123:ScollZoomListView:v1.0'
 	}
 ```
 
@@ -78,7 +48,7 @@ Usage
 -----
 ```xml
 <zhan.scrollzoomlist.ScrollZoomListView
-    android:id="@+id/list"
+    android:id="@+id/scrollZoomListView"
     app:min_zoom_scale="0.4"
     app:max_zoom_scale="2.0"
     app:zoom_scale_duration="300"
@@ -88,30 +58,6 @@ Usage
     app:zoom_scale="2.0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
-```
-
-
-expand Interface
------
-
-**Synchronous ListView**
-
-```java
-
-	public interface OnListViewZoomListener {
-	
-		void onListViewZoomUpdate(ValueAnimator animation, float translateX, float translateY,
-		    float scaleX, float scaleY);
-		
-		void onListViewStart();
-		
-		void onListViewCancel();
-	}
-
-	
-	private List<OnListViewZoomListener> mOnListViewZoomListeners = new ArrayList<>();
-	private List<SimpleOnScaleGestureListener> mOnScaleGestureListeners = new ArrayList<>();
-	private List<SimpleOnGestureListener> mSimpleOnGestureListeners = new ArrayList<>();
 ```
 
 Developed by
